@@ -54,7 +54,7 @@ export const updateRoomAvailability = async (req, res, next) => {
 export const removeRoomAvailability = async (req, res, next) => {
   try {
     console.log("inside try block");
-    await Rooms.updateOne(
+    await Rooms.updateMany(
       { "roomNumber._id": req.params.id },
       {
         $set: {
